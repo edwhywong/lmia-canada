@@ -5,6 +5,8 @@ A simple website to illustrate LMIA data and answer below questions
 - Which employers hired most?
 - Which occupations are demanding?
 
+Live Demo: [https://edwhywong.github.io/lmia-canada/](https://edwhywong.github.io/lmia-canada/) 
+
 ## Installation
 
 ```
