@@ -122,7 +122,16 @@ function ResponsiveDrawer(props: Props) {
           },
         ].map((item) => (
           <div key={item.label}>
-            <ListItem button component={Link} to={item.link}>
+            <ListItem
+              button
+              component={Link}
+              to={item.link}
+              onClick={() => {
+                if (mobileOpen) {
+                  handleDrawerToggle();
+                }
+              }}
+            >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.label} />
             </ListItem>
