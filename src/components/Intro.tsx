@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: theme.spacing(2),
       fontWeight: 'bold',
     },
+    bulletContainer: {
+      paddingLeft: theme.spacing(2),
+    },
   })
 );
 
@@ -28,7 +31,7 @@ function Intro() {
         <Typography variant="h4" className={classes.title}>
           Purpose of this website is to...
         </Typography>
-        <ul>
+        <ul className={classes.bulletContainer}>
           <li>
             <Typography>
               Show how many LMIA are issued for each Province
