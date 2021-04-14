@@ -190,6 +190,9 @@ function TopInfo(props: Props) {
                 inputProps={{
                   name: 'occupation',
                   id: 'occupation-select-helper-label',
+                  style: {
+                    whiteSpace: 'normal',
+                  },
                 }}
               >
                 <option aria-label="None" value="" />
