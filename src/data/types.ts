@@ -23,4 +23,10 @@ export interface LmiaData {
   'Approved Positions': string | number;
 }
 
-export type LmiaDataYear = '2020' | 'allTime';
+export type LmiaDataYear =
+  | '2016'
+  | '2017'
+  | '2018'
+  | '2019'
+  | '2020'
+  | 'allTime';

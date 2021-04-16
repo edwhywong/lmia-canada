@@ -28,7 +28,14 @@ interface Props {
   infoType: 'occupation' | 'employer' | 'province';
 }
 
-const yearOptions: LmiaDataYear[] = ['2020', 'allTime'];
+const yearOptions: LmiaDataYear[] = [
+  '2020',
+  '2019',
+  '2018',
+  '2017',
+  '2016',
+  'allTime',
+];
 
 const rowOptions = [25, 50, 100];
 

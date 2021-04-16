@@ -24,12 +24,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 | Feature               | Done?  |
 | ----------------------|:------:|
 | Night Mode            |   ✅    |
-| 2019 LMIA Data        |   ⬜️    |
-| 2018 LMIA Data        |   ⬜️    |
-| 2017 LMIA Data        |   ⬜️    |
-| 2016 LMIA Data        |   ⬜️    |
-| 2015 LMIA Data        |   ⬜️    |
-| 2014 LMIA Data        |   ⬜️    |
+| 2020 LMIA Data        |   ✅    |
+| 2019 LMIA Data        |   ✅    |
+| 2018 LMIA Data        |   ✅    |
+| 2017 LMIA Data        |   ✅    |
+| 2016 LMIA Data        |   ✅    |
 
 ## Data Source
 
