@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/lmia-canada/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/lmia-canada/static/js/main.f0476d94.chunk.js",
-    "main.js.map": "/lmia-canada/static/js/main.f0476d94.chunk.js.map",
-    "runtime-main.js": "/lmia-canada/static/js/runtime-main.24f42652.js",
-    "runtime-main.js.map": "/lmia-canada/static/js/runtime-main.24f42652.js.map",
-    "static/js/2.2c1287d0.chunk.js": "/lmia-canada/static/js/2.2c1287d0.chunk.js",
-    "static/js/2.2c1287d0.chunk.js.map": "/lmia-canada/static/js/2.2c1287d0.chunk.js.map",
-    "static/js/3.fdb4a3dc.chunk.js": "/lmia-canada/static/js/3.fdb4a3dc.chunk.js",
-    "static/js/3.fdb4a3dc.chunk.js.map": "/lmia-canada/static/js/3.fdb4a3dc.chunk.js.map",
+    "main.js": "/lmia-canada/static/js/main.a3820887.chunk.js",
+    "main.js.map": "/lmia-canada/static/js/main.a3820887.chunk.js.map",
+    "runtime-main.js": "/lmia-canada/static/js/runtime-main.66c5162d.js",
+    "runtime-main.js.map": "/lmia-canada/static/js/runtime-main.66c5162d.js.map",
+    "static/js/2.f29f9d9e.chunk.js": "/lmia-canada/static/js/2.f29f9d9e.chunk.js",
+    "static/js/2.f29f9d9e.chunk.js.map": "/lmia-canada/static/js/2.f29f9d9e.chunk.js.map",
+    "static/js/3.e3c69223.chunk.js": "/lmia-canada/static/js/3.e3c69223.chunk.js",
+    "static/js/3.e3c69223.chunk.js.map": "/lmia-canada/static/js/3.e3c69223.chunk.js.map",
     "index.html": "/lmia-canada/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/lmia-canada/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.2c1287d0.chunk.js.LICENSE.txt": "/lmia-canada/static/js/2.2c1287d0.chunk.js.LICENSE.txt"
+    "static/js/2.f29f9d9e.chunk.js.LICENSE.txt": "/lmia-canada/static/js/2.f29f9d9e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.24f42652.js",
-    "static/js/2.2c1287d0.chunk.js",
+    "static/js/runtime-main.66c5162d.js",
+    "static/js/2.f29f9d9e.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.f0476d94.chunk.js"
+    "static/js/main.a3820887.chunk.js"
   ]
 }
