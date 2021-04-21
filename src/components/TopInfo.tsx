@@ -1,18 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import {
-  Button,
-  Container,
-  FormControl,
-  Grid,
-  Typography,
-  InputLabel,
-  Select,
-} from '@material-ui/core';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
 import _ from 'lodash';
 import { LmiaData, LmiaDataYear, Province } from '../data/types';
+import { FilterType } from './MultipleFilter/types';
 import data from '../data';
 import InsightTable from './InsightTable';
+import MultipleFilter from './MultipleFilter';
 
 type OccupationInfo = { occupation: string; quantity: number };
 type EmployerInfo = { employer: string; quantity: number };
@@ -24,6 +18,13 @@ const occupationList = [
   ),
 ].sort();
 
+const provinceList = [
+  ...Array.from(
+    new Set(
+      ([...data.allTime] as LmiaData[]).map((d) => d['Province/Territory'])
+    )
+  ),
+].sort();
 interface Props {
   infoType: 'occupation' | 'employer' | 'province';
 }
@@ -52,7 +53,15 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     formControl: {
       marginTop: theme.spacing(1),
+      display: 'flex',
       minWidth: 120,
+    },
+    chips: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    chip: {
+      margin: 2,
     },
   })
 );
@@ -62,7 +71,8 @@ function TopInfo(props: Props) {
   const classes = useStyles();
   const [year, setYear] = useState<LmiaDataYear>('2020');
   const [rowNumber, setRowNumber] = useState(25);
-  const [occupationFilterText, setOccupationFilterText] = useState('');
+  const [occupationFilters, setOccupationFilters] = useState<string[]>([]);
+  const [provinceFilters, setProvinceFilters] = useState<string[]>([]);
 
   const tableData = useMemo(() => {
     let filteredData: (OccupationInfo | EmployerInfo | ProvinceInfo)[] = [];
@@ -82,9 +92,14 @@ function TopInfo(props: Props) {
         ).reverse();
         break;
       case 'employer':
-        if (occupationFilterText) {
-          tempData = tempData.filter(
-            (d) => d.Occupation === occupationFilterText
+        if (provinceFilters.length) {
+          tempData = tempData.filter((d) =>
+            provinceFilters.includes(d['Province/Territory'])
+          );
+        }
+        if (occupationFilters.length) {
+          tempData = tempData.filter((d) =>
+            occupationFilters.includes(d.Occupation)
           );
         }
         tempGroup = _.groupBy(tempData, 'Employer');
@@ -114,7 +129,7 @@ function TopInfo(props: Props) {
         break;
     }
     return filteredData;
-  }, [infoType, year, occupationFilterText]);
+  }, [infoType, year, provinceFilters, occupationFilters]);
 
   const getTableTitle = () => {
     switch (infoType) {
@@ -147,10 +162,41 @@ function TopInfo(props: Props) {
     return [firstColumn, 'Quantity'];
   };
 
-  const handleOccupationChange = (
-    event: React.ChangeEvent<{ name?: string | undefined; value: unknown }>
+  const handleChange = (type: FilterType) => (
+    event: React.ChangeEvent<{ value: unknown }>
   ) => {
-    setOccupationFilterText(event.target.value as string);
+    switch (type) {
+      case 'occupation':
+        setOccupationFilters(event.target.value as string[]);
+        break;
+      case 'province':
+        setProvinceFilters(event.target.value as string[]);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleChangeMultiple = (type: FilterType) => (
+    event: React.ChangeEvent<{ value: unknown }>
+  ) => {
+    const { options } = event.target as HTMLSelectElement;
+    const value: string[] = [];
+    for (let i = 0, l = options.length; i < l; i += 1) {
+      if (options[i].selected) {
+        value.push(options[i].value);
+      }
+    }
+    switch (type) {
+      case 'occupation':
+        setOccupationFilters(value);
+        break;
+      case 'province':
+        setProvinceFilters(value);
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -187,32 +233,22 @@ function TopInfo(props: Props) {
           </Button>
         ))}
         {infoType === 'employer' && (
-          <div>
-            <FormControl className={classes.formControl}>
-              <InputLabel id="occupation-select-helper-label">
-                Occupation
-              </InputLabel>
-              <Select
-                native
-                value={occupationFilterText}
-                onChange={handleOccupationChange}
-                inputProps={{
-                  name: 'occupation',
-                  id: 'occupation-select-helper-label',
-                  style: {
-                    whiteSpace: 'normal',
-                  },
-                }}
-              >
-                <option aria-label="None" value="" />
-                {occupationList.map((occ) => (
-                  <option key={occ} value={occ}>
-                    {occ}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
-          </div>
+          <>
+            <MultipleFilter
+              filterType="province"
+              value={provinceFilters}
+              optionList={provinceList}
+              handleChange={handleChange('province')}
+              handleChangeMultiple={handleChangeMultiple('province')}
+            />
+            <MultipleFilter
+              filterType="occupation"
+              value={occupationFilters}
+              optionList={occupationList}
+              handleChange={handleChange('occupation')}
+              handleChangeMultiple={handleChangeMultiple('occupation')}
+            />
+          </>
         )}
         <InsightTable
           tableTitle={getTableTitle()}
