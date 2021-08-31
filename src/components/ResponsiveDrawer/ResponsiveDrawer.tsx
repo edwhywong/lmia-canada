@@ -23,7 +23,7 @@ import {
   Theme,
   createStyles,
 } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import DarkModeToggle from './DarkModeToggle';
 import GithubLink from './GithubLink';
 
@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme: Theme) =>
         width: drawerWidth,
         flexShrink: 0,
       },
+    },
+    activePage: {
+      backgroundColor: theme.palette.type === 'dark' ? '#242526' : '#ebebeb',
     },
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
@@ -84,6 +87,7 @@ function ResponsiveDrawer(props: Props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -131,6 +135,9 @@ function ResponsiveDrawer(props: Props) {
                   handleDrawerToggle();
                 }
               }}
+              className={
+                location.pathname === item.link ? classes.activePage : undefined
+              }
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.label} />
