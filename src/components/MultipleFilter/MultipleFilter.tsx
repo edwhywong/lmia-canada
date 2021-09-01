@@ -12,6 +12,7 @@ import {
   Input,
   Chip,
   MenuItem,
+  Checkbox,
 } from '@material-ui/core';
 import { FilterType } from './types';
 import { capitalizeFirstLetter } from '../../utils';
@@ -149,6 +150,7 @@ function MultipleFilter(props: Props) {
                 value={opt}
                 style={getStyles(opt, value, theme)}
               >
+                <Checkbox checked={value.indexOf(opt) > -1} color="primary" />
                 {opt}
               </MenuItem>
             ))}
