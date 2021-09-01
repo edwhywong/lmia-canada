@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/lmia-canada/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/lmia-canada/static/js/main.05b2a04b.chunk.js",
-    "main.js.map": "/lmia-canada/static/js/main.05b2a04b.chunk.js.map",
+    "main.js": "/lmia-canada/static/js/main.57831c78.chunk.js",
+    "main.js.map": "/lmia-canada/static/js/main.57831c78.chunk.js.map",
     "runtime-main.js": "/lmia-canada/static/js/runtime-main.92ed155d.js",
     "runtime-main.js.map": "/lmia-canada/static/js/runtime-main.92ed155d.js.map",
-    "static/js/2.1d000f56.chunk.js": "/lmia-canada/static/js/2.1d000f56.chunk.js",
-    "static/js/2.1d000f56.chunk.js.map": "/lmia-canada/static/js/2.1d000f56.chunk.js.map",
+    "static/js/2.52b43f41.chunk.js": "/lmia-canada/static/js/2.52b43f41.chunk.js",
+    "static/js/2.52b43f41.chunk.js.map": "/lmia-canada/static/js/2.52b43f41.chunk.js.map",
     "static/js/3.3611bf28.chunk.js": "/lmia-canada/static/js/3.3611bf28.chunk.js",
     "static/js/3.3611bf28.chunk.js.map": "/lmia-canada/static/js/3.3611bf28.chunk.js.map",
     "index.html": "/lmia-canada/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/lmia-canada/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.1d000f56.chunk.js.LICENSE.txt": "/lmia-canada/static/js/2.1d000f56.chunk.js.LICENSE.txt"
+    "static/js/2.52b43f41.chunk.js.LICENSE.txt": "/lmia-canada/static/js/2.52b43f41.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.92ed155d.js",
-    "static/js/2.1d000f56.chunk.js",
+    "static/js/2.52b43f41.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.05b2a04b.chunk.js"
+    "static/js/main.57831c78.chunk.js"
   ]
 }
