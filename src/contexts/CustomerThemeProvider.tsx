@@ -27,7 +27,7 @@ const themes: {
 } = {
   light: {
     primary: {
-      main: '#38d1cc',
+      main: '#008080',
       contrastText: '#fff',
     },
   },
